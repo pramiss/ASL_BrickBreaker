@@ -48,6 +48,7 @@
             this._paddle2 = new Guna.UI2.WinForms.Guna2Panel();
             this._paddle1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelGameplay = new Guna.UI2.WinForms.Guna2Panel();
+            this.green_ball = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.paddle1 = new Guna.UI2.WinForms.Guna2Panel();
             this.paddle2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelResult = new Guna.UI2.WinForms.Guna2Panel();
@@ -57,16 +58,20 @@
             this.@__paddle2 = new Guna.UI2.WinForms.Guna2Panel();
             this.timerCountdown = new System.Windows.Forms.Timer(this.components);
             this.timerGamePlay = new System.Windows.Forms.Timer(this.components);
+            this.timerBrickGeneration = new System.Windows.Forms.Timer(this.components);
+            this.btnQuit = new Guna.UI2.WinForms.Guna2Button();
             this.PB_GameLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.green_ball = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pbResultImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelIntro.SuspendLayout();
             this._BtnVkRight.SuspendLayout();
             this._BtnVkLeft.SuspendLayout();
             this._BtnD.SuspendLayout();
             this._BtnA.SuspendLayout();
             this.panelGameplay.SuspendLayout();
+            this.panelResult.SuspendLayout();
             this.panelCountDown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_GameLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbResultImage)).BeginInit();
             this.SuspendLayout();
             // 
             // panelIntro
@@ -303,6 +308,17 @@
             this.panelGameplay.TabIndex = 0;
             this.panelGameplay.Visible = false;
             // 
+            // green_ball
+            // 
+            this.green_ball.BackColor = System.Drawing.Color.Transparent;
+            this.green_ball.BorderRadius = 15;
+            this.green_ball.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.green_ball.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.green_ball.Location = new System.Drawing.Point(308, 304);
+            this.green_ball.Name = "green_ball";
+            this.green_ball.Size = new System.Drawing.Size(30, 30);
+            this.green_ball.TabIndex = 18;
+            // 
             // paddle1
             // 
             this.paddle1.AutoRoundedCorners = true;
@@ -329,6 +345,9 @@
             // 
             // panelResult
             // 
+            this.panelResult.BackColor = System.Drawing.Color.Black;
+            this.panelResult.Controls.Add(this.pbResultImage);
+            this.panelResult.Controls.Add(this.btnQuit);
             this.panelResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelResult.Location = new System.Drawing.Point(0, 0);
             this.panelResult.Name = "panelResult";
@@ -393,6 +412,30 @@
             this.timerGamePlay.Interval = 16;
             this.timerGamePlay.Tick += new System.EventHandler(this.timerGamePlay_Tick);
             // 
+            // timerBrickGeneration
+            // 
+            this.timerBrickGeneration.Interval = 5000;
+            this.timerBrickGeneration.Tick += new System.EventHandler(this.timerBrickGeneration_Tick);
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.BorderColor = System.Drawing.Color.Silver;
+            this.btnQuit.BorderRadius = 8;
+            this.btnQuit.BorderThickness = 3;
+            this.btnQuit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuit.FillColor = System.Drawing.Color.Black;
+            this.btnQuit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuit.ForeColor = System.Drawing.Color.Yellow;
+            this.btnQuit.Location = new System.Drawing.Point(234, 551);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(196, 59);
+            this.btnQuit.TabIndex = 17;
+            this.btnQuit.Text = "게임 종료";
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
             // PB_GameLogo
             // 
             this.PB_GameLogo.Image = global::BrickBreaker.Properties.Resources.brick_breaker_logo;
@@ -404,25 +447,26 @@
             this.PB_GameLogo.TabIndex = 12;
             this.PB_GameLogo.TabStop = false;
             // 
-            // green_ball
+            // pbResultImage
             // 
-            this.green_ball.BorderRadius = 15;
-            this.green_ball.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.green_ball.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.green_ball.Location = new System.Drawing.Point(308, 304);
-            this.green_ball.Name = "green_ball";
-            this.green_ball.Size = new System.Drawing.Size(30, 30);
-            this.green_ball.TabIndex = 18;
+            this.pbResultImage.Image = global::BrickBreaker.Properties.Resources.player2_wins;
+            this.pbResultImage.ImageRotate = 0F;
+            this.pbResultImage.Location = new System.Drawing.Point(133, 63);
+            this.pbResultImage.Name = "pbResultImage";
+            this.pbResultImage.Size = new System.Drawing.Size(510, 340);
+            this.pbResultImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbResultImage.TabIndex = 18;
+            this.pbResultImage.TabStop = false;
             // 
             // BrickBreaker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 753);
+            this.Controls.Add(this.panelResult);
             this.Controls.Add(this.panelGameplay);
             this.Controls.Add(this.panelCountDown);
             this.Controls.Add(this.panelIntro);
-            this.Controls.Add(this.panelResult);
             this.KeyPreview = true;
             this.Name = "BrickBreaker";
             this.Text = "BrickBreaker";
@@ -440,9 +484,11 @@
             this._BtnA.ResumeLayout(false);
             this._BtnA.PerformLayout();
             this.panelGameplay.ResumeLayout(false);
+            this.panelResult.ResumeLayout(false);
             this.panelCountDown.ResumeLayout(false);
             this.panelCountDown.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_GameLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbResultImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -479,6 +525,9 @@
         private Guna.UI2.WinForms.Guna2Panel paddle2;
         private System.Windows.Forms.Timer timerGamePlay;
         private Guna.UI2.WinForms.Guna2GradientPanel green_ball;
+        private System.Windows.Forms.Timer timerBrickGeneration;
+        private Guna.UI2.WinForms.Guna2Button btnQuit;
+        private Guna.UI2.WinForms.Guna2PictureBox pbResultImage;
     }
 }
 

@@ -73,9 +73,59 @@ namespace BrickBreaker.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap green_ball {
+        internal static System.Drawing.Bitmap brick_icon_basic {
             get {
-                object obj = ResourceManager.GetObject("green-ball", resourceCulture);
+                object obj = ResourceManager.GetObject("brick-icon-basic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap brick_icon_blue {
+            get {
+                object obj = ResourceManager.GetObject("brick-icon-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap paddle_up_icon {
+            get {
+                object obj = ResourceManager.GetObject("paddle_up_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap player1_wins {
+            get {
+                object obj = ResourceManager.GetObject("player1-wins", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap player2_wins {
+            get {
+                object obj = ResourceManager.GetObject("player2-wins", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap speed_down_icon {
+            get {
+                object obj = ResourceManager.GetObject("speed_down_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

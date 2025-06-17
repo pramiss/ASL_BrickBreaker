@@ -88,10 +88,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\green-ball.png" />
+    <None Include="Resources\brick-breaker-logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\brick-breaker-logo.png" />
+    <None Include="Resources\brick-icon-basic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brick-icon-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paddle_up_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speed_down_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player1-wins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player2-wins.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
