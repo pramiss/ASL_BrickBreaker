@@ -62,12 +62,12 @@ namespace BrickBreaker
         private int paddleSpeed = 6;
         bool p1LeftPressed, p1RightPressed, p2LeftPressed, p2RightPressed;
         // 볼 관련
-        private int ballSpeedX = 4;
-        private int ballSpeedY = 4;
+        private int ballSpeedX = 5;
+        private int ballSpeedY = 5;
         // 벽돌 관련
         List<PictureBox> bricks = new List<PictureBox>(); // 모든 벽돌 컨트롤을 담을 리스트
-        private int maxBallSpeed = 7; // 공의 최대 속도 제한
-        private int minBallSpeed = 4; // 공의 최대 속도 제한
+        private int maxBallSpeed = 8; // 공의 최대 속도 제한
+        private int minBallSpeed = 5; // 공의 최대 속도 제한
         // 아이템 관련
         List<PictureBox> items_red = new List<PictureBox>(); // player2 방향(Y > 0)으로 떨어질 아이템
         List<PictureBox> items_blue = new List<PictureBox>(); // player1 방향(Y < 0)으로 떨어질 아이템
