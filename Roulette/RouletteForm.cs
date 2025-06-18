@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 
 namespace Roulette
 {
@@ -133,8 +134,38 @@ namespace Roulette
             {
                 currentAngle = targetAngle; // 오차 보정: 목표 지점에 정확히 맞춤
                 timerSpin.Stop();
-                btnReroll.Enabled = true;
-                MessageBox.Show($"결과: {items[winnerIndex]}");
+                string s = " ";
+                // 결과에 따른 메시지 출력
+                switch (winnerIndex)
+                {
+                    case 0:
+                        lblResult1.Text = "결과: 원샷!";
+                        lblResult2.Text = "         한잔 가득 마시기        ";
+                        break;
+                    case 1:
+                        lblResult1.Text = "결과: 투샷!!";
+                        lblResult2.Text = "연속으로 두잔 마시기";
+                        break;
+                    case 2:
+                        lblResult1.Text = "결과: 모두 건배!!";
+                        lblResult2.Text = "모두 함께 한잔 마시기";
+                        break;
+                    case 3:
+                        lblResult1.Text = "결과: 상대방에게 한잔";
+                        lblResult2.Text = "원하는 상대를 지목해서 한잔 마시게 하기";
+                        break;
+                    case 4:
+                        lblResult1.Text = "결과: 같이 한잔";
+                        lblResult2.Text = "원하는 상대와 같이 한잔 마시기";
+                        break;
+                    case 5:
+                        lblResult1.Text = "결과: 꽝";
+                        lblResult2.Text = "운이 좋으시네요...";
+                        break;
+                }
+
+                rouletteResult.Visible = true;
+
                 return;
             }
 
@@ -160,7 +191,7 @@ namespace Roulette
         {
             // 버튼 초기화
             btnRever.Enabled = true;
-            btnReroll.Enabled = false;
+            rouletteResult.Visible = false;
             isSpinned = false;
 
             // 변수 초기화
@@ -184,7 +215,7 @@ namespace Roulette
                 if (i % 3 == 0)
                     colors.Add(Color.FromArgb(0, 202, 255));
                 else if (i % 3 == 1)
-                    colors.Add(Color.FromArgb(255, 0, 0));
+                    colors.Add(Color.FromArgb(255, 111, 60));
                 else
                     colors.Add(Color.FromArgb(255, 235, 0));
             }
@@ -196,6 +227,11 @@ namespace Roulette
             typeof(Panel).InvokeMember("DoubleBuffered",
                 System.Reflection.BindingFlags.SetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
                 null, panelRoulette, new object[] { true });
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
