@@ -16,5 +16,13 @@ namespace GameLauncher
         {
             InitializeComponent();
         }
+
+        private void btnBrickBreaker_Click(object sender, EventArgs e)
+        {
+            BrickBreaker.BrickBreaker bb = new BrickBreaker.BrickBreaker();
+            bb.ShowDialog();
+            Roulette.Roulette rr = new Roulette.Roulette();
+            rr.ShowDialog();
+        }
     }
 }

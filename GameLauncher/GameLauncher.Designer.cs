@@ -39,18 +39,21 @@
             this.btnBrickBreaker.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnBrickBreaker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBrickBreaker.ForeColor = System.Drawing.Color.White;
-            this.btnBrickBreaker.Location = new System.Drawing.Point(290, 212);
+            this.btnBrickBreaker.Location = new System.Drawing.Point(331, 265);
+            this.btnBrickBreaker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBrickBreaker.Name = "btnBrickBreaker";
-            this.btnBrickBreaker.Size = new System.Drawing.Size(180, 45);
+            this.btnBrickBreaker.Size = new System.Drawing.Size(206, 56);
             this.btnBrickBreaker.TabIndex = 0;
             this.btnBrickBreaker.Text = "핑퐁 벽돌깨기";
+            this.btnBrickBreaker.Click += new System.EventHandler(this.btnBrickBreaker_Click);
             // 
             // GameLauncher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 562);
             this.Controls.Add(this.btnBrickBreaker);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "GameLauncher";
             this.Text = "GameLauncher";
             this.ResumeLayout(false);
