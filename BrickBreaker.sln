@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLauncher", "GameLaunche
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roulette", "Roulette\Roulette.csproj", "{3B1C318E-9BBA-4C2E-8A5D-D1513AE9A09E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bula", "Bula\Bula.csproj", "{B47ED654-2595-4F3D-B9DC-42C0196513FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3B1C318E-9BBA-4C2E-8A5D-D1513AE9A09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B1C318E-9BBA-4C2E-8A5D-D1513AE9A09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B1C318E-9BBA-4C2E-8A5D-D1513AE9A09E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B47ED654-2595-4F3D-B9DC-42C0196513FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47ED654-2595-4F3D-B9DC-42C0196513FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B47ED654-2595-4F3D-B9DC-42C0196513FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B47ED654-2595-4F3D-B9DC-42C0196513FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

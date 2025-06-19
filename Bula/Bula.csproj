@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8070550C-3899-408B-A795-039610091711}</ProjectGuid>
+    <ProjectGuid>{B47ED654-2595-4F3D-B9DC-42C0196513FC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GameLauncher</RootNamespace>
-    <AssemblyName>GameLauncher</AssemblyName>
+    <RootNamespace>Bula</RootNamespace>
+    <AssemblyName>Bula</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,14 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,16 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameLauncher.cs">
+    <Compile Include="Bula_Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameLauncher.Designer.cs">
-      <DependentUpon>GameLauncher.cs</DependentUpon>
+    <Compile Include="Bula_Game.Designer.cs">
+      <DependentUpon>Bula_Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bula_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bula_Main.Designer.cs">
+      <DependentUpon>Bula_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GameLauncher.resx">
-      <DependentUpon>GameLauncher.cs</DependentUpon>
+    <EmbeddedResource Include="Bula_Game.resx">
+      <DependentUpon>Bula_Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bula_Main.resx">
+      <DependentUpon>Bula_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -72,7 +75,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -86,19 +88,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BrickBreaker\BrickBreaker.csproj">
-      <Project>{e8bf4700-ab57-43ae-8b2c-0d08f20353b1}</Project>
-      <Name>BrickBreaker</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Bula\Bula.csproj">
-      <Project>{b47ed654-2595-4f3d-b9dc-42c0196513fc}</Project>
-      <Name>Bula</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Roulette\Roulette.csproj">
-      <Project>{3b1c318e-9bba-4c2e-8a5d-d1513ae9a09e}</Project>
-      <Name>Roulette</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

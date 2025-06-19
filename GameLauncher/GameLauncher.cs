@@ -24,5 +24,13 @@ namespace GameLauncher
             Roulette.Roulette rr = new Roulette.Roulette();
             rr.ShowDialog();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Bula.Bula_Main bula = new Bula.Bula_Main();
+            bula.ShowDialog();
+            Roulette.Roulette rr = new Roulette.Roulette();
+            rr.ShowDialog();
+        }
     }
 }
